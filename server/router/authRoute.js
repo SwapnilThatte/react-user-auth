@@ -17,13 +17,7 @@ router.post("/login", async (req, res) => {
 
         if (userExists) {
             const valid = await bcrypt.compare(password, userExists.password);
-            if (valid) {
-               // const auth_salt = await bcrypt.genSalt(10)
-                // const auth_token = await bcrypt.hash(
-                //     JSON.stringify(userExists._id),
-                //     auth_salt
-                // );
-              
+            if (valid) {          
                 
                 return res
                     .status(200)
